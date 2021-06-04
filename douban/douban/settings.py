@@ -64,7 +64,8 @@ DOWNLOAD_DELAY = 2
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'douban.pipelines.DoubanPipeline': 300,
+   # 'douban.pipelines.DoubanPipeline': 300,
+    'douban.pipelines.MongoPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -87,3 +88,12 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+
+MONGODB_HOST = '127.0.0.1'
+# 端口号，默认27017
+MONGODB_PORT = 27017
+# 设置数据库名称
+MONGODB_DBNAME = 'fodder'
+# 存放本数据的表名称
+MONGODB_DOCNAME = 'DoubanBook'
